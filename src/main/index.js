@@ -15,7 +15,7 @@ export default function Main() {
         <AddNoteButton onPress={() => setIsNewNoteModalVisible(true)} />
         <NewNoteModal
           visible={isNewNoteModalVisible}
-          // onClose={() => setIsNewNoteModalVisible(false)}
+          onClose={() => setIsNewNoteModalVisible(false)}
           // onSave={handleCreateNote}
       />
     </Container>
