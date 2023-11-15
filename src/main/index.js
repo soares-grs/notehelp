@@ -1,14 +1,11 @@
-import { StatusBar } from 'expo-status-bar';
-import { Text } from 'react-native';
-import { ContainerExample } from './styles';
-
+import CustomHeader from '../components/Header';
+import { Container } from './styles';
 
 export default function Main() {
   return (
-    <ContainerExample>
-      <Text>Main!</Text>
-      <StatusBar style="auto" />
-    </ContainerExample>
+    <Container>
+        <CustomHeader />
+    </Container>
   );
 }
 
