@@ -9,7 +9,7 @@ export default function NewNoteModal({ visible, onSave, onClose }) {
         visible={visible}
         onClose={onClose}
         >
-            <Title>Cadastrar nova nota</Title>
+            <Title>Nova Nota</Title>
             <NoteForm onClose={onClose}/>
         </CustomModal>
     );

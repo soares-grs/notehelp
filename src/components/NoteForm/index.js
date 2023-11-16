@@ -10,14 +10,14 @@ export default function NoteForm({ onClose }) {
     return (
         <Form>
             <Input
-                placeholder="Título da nota"
+                placeholder="Título"
                 value={title}
                 placeholderTextColor="#666"
                 onChangeText={setTitle}
             />
 
             <Input
-                placeholder="Descrição da nota"
+                placeholder="Descrição"
                 placeholderTextColor="#666"
                 value={description}
                 onChangeText={setDescription}

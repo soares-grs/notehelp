@@ -9,21 +9,21 @@ export const Text = styled.Text`
     font-size: 18px;
     color: white;
     font-family: 'Montserrat-400';
-    margin: 4px;
+    margin: 6px;
 
 `;
 
 export const Input = styled.TextInput`
   background: #FFFFFF;
-  border: 1px solid rgba(204, 204, 204, 0.5);
-  border-radius: 8px;
-  padding: 12px;
+  border-radius: 5px;
+  font-size:19px;
+  padding: 5px 0px 5px 6px;
 `;
 
 export const Button = styled.TouchableOpacity`
     background-color: ${(props) => props.disabled ? "#999" : "#4BB543"};
     border-radius: 12px;
-    width: 240px;
+    width: 200px;
     height: 36px;
     margin: 12px;
     display: flex;
