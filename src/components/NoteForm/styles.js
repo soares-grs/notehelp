@@ -21,10 +21,10 @@ export const Input = styled.TextInput`
 `;
 
 export const Button = styled.TouchableOpacity`
+    background-color: ${(props) => props.disabled ? "#999" : "#4BB543"};
     border-radius: 12px;
     width: 240px;
     height: 36px;
-    background-color: #4BB543;
     margin: 12px;
     display: flex;
     align-items: center;
