@@ -1,4 +1,5 @@
 import CustomHeader from '../components/Header';
+import CardContent from '../components/Card';
 import { Container } from './styles';
 import AddNoteButton from '../components/AddNoteButton';
 import { useState } from 'react';
@@ -12,6 +13,7 @@ export default function Main() {
   return (
     <Container>
         <CustomHeader />
+        <CardContent />
         <AddNoteButton onPress={() => setIsNewNoteModalVisible(true)} />
         <NewNoteModal
           visible={isNewNoteModalVisible}
