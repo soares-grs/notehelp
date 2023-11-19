@@ -11,7 +11,10 @@ export default function NewNoteModal({ visible, onSave, onClose }) {
         >   
             {/* icone */}
             <Title>Nova Nota</Title>
-            <NoteForm onClose={onClose}/>
+            <NoteForm 
+                onClose={onClose}
+                onSave={onSave}
+            />
         </CustomModal>
     );
 }
