@@ -12,30 +12,44 @@ import ViewNoteModal from "../components/ViewNoteModal";
 
 export default function Main() {
   const [isNewNoteModalVisible, setIsNewNoteModalVisible] = useState(false);
-  const [isViewNoteModalVisible, setIsViewtNoteModalVisible] = useState(false);
-  const [notes, setNotes] = useState([{ title: "chama", id: "2" }]);
+  const [isViewNoteModalVisible, setIsViewNoteModalVisible] = useState(false);
+  const [originalNotes, setOriginalNotes] = useState([{ title: "chama", id: "2" }]);
+  const [notes, setNotes] = useState(originalNotes);
   const [noteBeingViewed, setNoteBeingViewed] = useState();
 
   async function handleViewNote(note) {
     setNoteBeingViewed(note);
-    setIsViewtNoteModalVisible(true);
+    setIsViewNoteModalVisible(true);
   }
 
   function handleCreateNote(note) {
-    if (notes.length > 0) {
-      const newNotes = [...notes];
-      newNotes.unshift(note);
-      setNotes(newNotes);
-    } else {
-      notes.push(note);
-    }
-
+    const newNotes = [note, ...notes];
+    setNotes(newNotes);
+    setOriginalNotes(newNotes);
     setIsNewNoteModalVisible(false);
+  }
+
+  function filterArrayBySearch(array, searchQuery) {
+    const lowerCaseSearch = searchQuery.toLowerCase();
+
+    return array.filter(item => {
+      const lowerCaseItemName = item.title.toLowerCase();
+
+      return lowerCaseItemName.includes(lowerCaseSearch);
+    });
+  }
+
+  function handleSearch(texto) {
+    if (texto.trim() === "") {
+      setNotes(originalNotes);
+    } else {
+      setNotes(filterArrayBySearch(originalNotes, texto));
+    }
   }
 
   return (
     <Container>
-      <CustomHeader />
+      <CustomHeader onSearch={handleSearch} />
       <SectionFixed>
         <NotesContainer></NotesContainer>
       </SectionFixed>
@@ -52,7 +66,7 @@ export default function Main() {
       />
       <ViewNoteModal
         visible={isViewNoteModalVisible}
-        onClose={() => setIsViewtNoteModalVisible(false)}
+        onClose={() => setIsViewNoteModalVisible(false)}
         noteBeginViewed={noteBeingViewed}
       />
     </Container>
