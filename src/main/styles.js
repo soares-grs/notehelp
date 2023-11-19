@@ -33,9 +33,9 @@ export const CardNotes = styled.View`
 export const CardEmpty = styled.View`
   display:flex;
   justify-content:center;
-    border: 1px solid rgba(204, 204, 204, 0.5);
+  margin:0 auto;
   align-items:center;
-  width:100%;
+  width:96%;
 `;
 
 

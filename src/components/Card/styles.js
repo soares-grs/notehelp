@@ -3,7 +3,6 @@ import styled from "styled-components";
 
 export const Container = styled.TouchableOpacity`
   background: #d9d9d9;
-
   border-radius: 8px;
   font-size: 16px;
   padding:0px;
@@ -32,6 +31,7 @@ export const Circle = styled.View`
 
 export const Title = styled.Text`
   font-size: 25px;
+  overflow: hidden;
   font-family: 'Montserrat-500';
 `;
 
