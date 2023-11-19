@@ -1,4 +1,4 @@
-import { Form, Input, Button, Text } from "./styles";
+import { Form, InputTitle, InputDesc,Button, Text } from "./styles";
 
 import { useState } from "react";
 
@@ -9,15 +9,15 @@ export default function NoteForm({ onClose }) {
 
     return (
         <Form>
-            <Input
-                placeholder="Título da nota"
+            <InputTitle
+                placeholder="Título"
                 value={title}
                 placeholderTextColor="#666"
                 onChangeText={setTitle}
             />
 
-            <Input
-                placeholder="Descrição da nota"
+            <InputDesc
+                placeholder="Descrição"
                 placeholderTextColor="#666"
                 value={description}
                 onChangeText={setDescription}
@@ -27,7 +27,8 @@ export default function NoteForm({ onClose }) {
                 onPress={onClose}
                 disabled={title.length === 0 || description.length === 0}
             >
-                <Text>Cadastrar</Text>
+                {/* icone */}
+                <Text>Nova Nota</Text>
             </Button>
         </Form>
     );
