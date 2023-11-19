@@ -10,7 +10,7 @@ export const Container = styled.SafeAreaView`
 
 export const WarningEmptyNotes = styled.Text`
   display:flex;
-  padding: 10px 0px 10px 14px;
+  padding: 10px 140px 10px 0px;
   color: gray;
   font-family: "Montserrat-500";
 `;
@@ -33,7 +33,8 @@ export const CardNotes = styled.View`
 export const CardEmpty = styled.View`
   display:flex;
   justify-content:center;
-  align-items:flex-start;
+    border: 1px solid rgba(204, 204, 204, 0.5);
+  align-items:center;
   width:100%;
 `;
 
