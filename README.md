@@ -5,6 +5,6 @@
 - [x] Visualização de notas
 - [ ] Campo de pesquisa funcional
 - [ ] Edição de notas
-- [ ] Uso de ícones
+- [x] Uso de ícones
 - [ ] Fixar notas
 - [ ] Deletar notas
