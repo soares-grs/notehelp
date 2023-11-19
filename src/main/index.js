@@ -7,7 +7,7 @@ import NewNoteModal from "../components/NewNoteModal";
 import SectionNotas from "../components/SectionNotas";
 import SectionFixed from "../components/SectionFixed";
 import EmptyNotes from "../components/EmptyNotes";
-import { Text } from "../components/NoteForm/styles";
+import { Text } from "react-native";
 
 export default function Main() {
   const [isNewNoteModalVisible, setIsNewNoteModalVisible] = useState(false);
@@ -30,10 +30,13 @@ export default function Main() {
       <CustomHeader />
       <SectionFixed>
         <NotesContainer>
-          <Cards notes={notes} />
         </NotesContainer>
       </SectionFixed>
-      <SectionNotas></SectionNotas>
+      <SectionNotas>
+        <NotesContainer>
+          <Cards notes={notes} />
+        </NotesContainer>
+      </SectionNotas>
       <AddNoteButton onPress={() => setIsNewNoteModalVisible(true)} />
       <NewNoteModal
         visible={isNewNoteModalVisible}
