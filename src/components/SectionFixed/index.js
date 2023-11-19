@@ -1,10 +1,13 @@
-import { TitleFx, FixContainer } from "./styles";
+import { TitleFx, FixContainer, NotesContainer } from "./styles";
 
-export default function SectionFixed() {
+export default function SectionFixed({ children }) {
     return (
         <FixContainer>
             <TitleFx>
                 FIXADOS
+            <NotesContainer>
+                {children}
+            </NotesContainer>
             </TitleFx>
         </FixContainer>
     );
