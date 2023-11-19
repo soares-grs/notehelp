@@ -17,11 +17,7 @@ export const View = styled.View`
 export const IconContainer = styled.View`
   position:absolute;
   padding:16px 0 10px 10px;
-  height:50px;
-  margin: 10px 10px 0 10px;
-  padding:0 0 0 10px;
   font-size: 16px;
-  font-family: 'Montserrat-500';
 `;
 
 export const placeholder = styled.View`
