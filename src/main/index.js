@@ -1,4 +1,4 @@
-import { Container, NotesContainer } from "./styles";
+import { Container, NotesContainer, Sections } from "./styles";
 import { useState } from "react";
 import CustomHeader from "../components/Header";
 import Cards from "../components/Card";
@@ -11,7 +11,7 @@ import { Text } from "../components/NoteForm/styles";
 
 export default function Main() {
   const [isNewNoteModalVisible, setIsNewNoteModalVisible] = useState(false);
-  const [notes, setNotes] = useState([{title: 'chama', id: '2'}]);
+  const [notes, setNotes] = useState([{ title: "chama", id: "2" }]);
 
   function handleCreateNote(note) {
     if (notes.length > 0) {
@@ -33,7 +33,7 @@ export default function Main() {
           <Cards notes={notes} />
         </NotesContainer>
       </SectionFixed>
-      <SectionNotas />
+      <SectionNotas></SectionNotas>
       <AddNoteButton onPress={() => setIsNewNoteModalVisible(true)} />
       <NewNoteModal
         visible={isNewNoteModalVisible}

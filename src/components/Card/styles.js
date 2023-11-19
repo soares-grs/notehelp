@@ -12,7 +12,7 @@ export const Card = styled.View`
   padding: 10px;
   font-size: 16px;
   font-family: 'Montserrat-500';
-
+  margin-top: 8px;
 `;
 
 export const Circle = styled.View`
