@@ -5,7 +5,7 @@ export const Container = styled.View`
   flex-direction: column;
 `
 
-export const Card = styled.View`
+export const Card = styled.TouchableOpacity`
   background: #d9d9d9;
   border: 1px solid rgba(204, 204, 204, 0.5);
   border-radius: 8px;
