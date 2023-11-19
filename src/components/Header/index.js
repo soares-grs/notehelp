@@ -6,7 +6,6 @@ export default function CustomHeader({ onSearch }) {
             <Title>NoteHelp</Title>
             <SearchInput
                 onSearch={onSearch}
-                placeholder="Informe o lembrete"
             />
         </HeaderContainer>
     )
