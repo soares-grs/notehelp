@@ -12,5 +12,5 @@ export const Title = styled.Text`
     color: #252525;
     font-size: 28px;
     font-family: 'Montserrat-700';
-    margin: 12px
+    padding: 20px 0 0 10px;
 `;

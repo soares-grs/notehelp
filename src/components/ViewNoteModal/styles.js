@@ -6,3 +6,10 @@ export const Title = styled.Text`
     font-family: 'Montserrat-700';
     padding: 0px 0 0px 8px;
 `;
+
+export const Description = styled.Text`
+  padding: 0px 0px 0px 8px;
+  font-size: 18px;
+  color:#a5a5a5;
+  font-family: 'Montserrat-500';
+`;

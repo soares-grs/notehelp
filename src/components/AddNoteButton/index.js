@@ -1,12 +1,14 @@
-import { Container, PlusIcon } from "./styles";
+import { Container, PlusIcon, Circle } from "./styles";
 
-export default function AddNoteButton({onPress, disabled}) {
+export default function AddNoteButton({ onPress, disabled }) {
     return (
-        <Container 
-            disabled={disabled} 
+        <Container
+            disabled={disabled}
             onPress={onPress}
         >
-            <PlusIcon>+</PlusIcon>
+            <Circle>
+                <PlusIcon>+</PlusIcon>
+            </Circle>
         </Container>
     );
 }
