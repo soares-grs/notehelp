@@ -1,4 +1,4 @@
-import { Container, NotesContainer, Sections } from "./styles";
+import { Container, CardNotes, Card, CardEmpty, WarningEmptyNotes } from "./styles";
 import { useState, useEffect } from "react";
 import CustomHeader from "../components/Header";
 import Cards from "../components/Card";
@@ -6,14 +6,14 @@ import AddNoteButton from "../components/AddNoteButton";
 import NewNoteModal from "../components/NewNoteModal";
 import SectionNotas from "../components/SectionNotas";
 import SectionFixed from "../components/SectionFixed";
-import EmptyNotes from "../components/EmptyNotes";
 import { Text } from "react-native";
 import ViewNoteModal from "../components/ViewNoteModal";
+
 
 export default function Main() {
   const [isNewNoteModalVisible, setIsNewNoteModalVisible] = useState(false);
   const [isViewNoteModalVisible, setIsViewNoteModalVisible] = useState(false);
-  const [originalNotes, setOriginalNotes] = useState([{ title: "chama", id: "2" }]);
+  const [originalNotes, setOriginalNotes] = useState([]);
   const [notes, setNotes] = useState(originalNotes);
   const [noteBeingViewed, setNoteBeingViewed] = useState();
 
@@ -50,14 +50,28 @@ export default function Main() {
   return (
     <Container>
       <CustomHeader onSearch={handleSearch} />
-      <SectionFixed>
-        <NotesContainer></NotesContainer>
-      </SectionFixed>
-      <SectionNotas>
-        <NotesContainer>
+      <SectionFixed />
+      <CardEmpty>
+        {notes.length > 0 ? (
           <Cards onViewNote={note => handleViewNote(note)} notes={notes} />
-        </NotesContainer>
-      </SectionNotas>
+        ) : (
+          <WarningEmptyNotes>
+            Não há notas a serem exibidas.
+          </WarningEmptyNotes>
+
+        )}
+      </CardEmpty>
+      <SectionNotas />
+      <CardEmpty>
+        {notes.length > 0 ? (
+          <Cards onViewNote={note => handleViewNote(note)} notes={notes} />
+        ) : (
+            <WarningEmptyNotes>
+              Não há notas a serem exibidas.
+            </WarningEmptyNotes>
+      
+        )}
+      </CardEmpty>
       <AddNoteButton onPress={() => setIsNewNoteModalVisible(true)} />
       <NewNoteModal
         visible={isNewNoteModalVisible}

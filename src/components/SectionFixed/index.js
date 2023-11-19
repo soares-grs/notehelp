@@ -5,10 +5,10 @@ export default function SectionFixed({ children }) {
         <FixContainer>
             <TitleFx>
                 FIXADOS
-            <NotesContainer>
-                {children}
-            </NotesContainer>
             </TitleFx>
+            {/* <NotesContainer>
+                {children}
+            </NotesContainer> */}
         </FixContainer>
     );
 };
