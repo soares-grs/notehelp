@@ -1,5 +1,3 @@
-
-
 import { Title, NotesContainer } from "./styles";
 
 export default function SectionNotas({ children }) {

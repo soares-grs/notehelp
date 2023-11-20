@@ -7,15 +7,18 @@ import NewNoteModal from "../components/NewNoteModal";
 import SectionNotas from "../components/SectionNotas";
 import SectionFixed from "../components/SectionFixed";
 import { Text } from "react-native";
+import EditNoteModal from "../components/EditNoteModal";
 import ViewNoteModal from "../components/ViewNoteModal";
-
+ 
 
 export default function Main() {
   const [isNewNoteModalVisible, setIsNewNoteModalVisible] = useState(false);
   const [isViewNoteModalVisible, setIsViewNoteModalVisible] = useState(false);
+  const [isEditNoteModalVisible, setIsEditNoteModalVisible] = useState(false);
   const [originalNotes, setOriginalNotes] = useState([]);
   const [notes, setNotes] = useState(originalNotes);
   const [noteBeingViewed, setNoteBeingViewed] = useState();
+  const [noteBeingEdited, setNoteBeingEdited] = useState();
 
   async function handleViewNote(note) {
     setNoteBeingViewed(note);
@@ -47,13 +50,21 @@ export default function Main() {
     }
   }
 
+  function handleEditNote(note) {
+    setNoteBeingEdited(note);
+    setIsEditNoteModalVisible(true);
+  }
+
   return (
     <Container>
       <CustomHeader onSearch={handleSearch} />
       <SectionFixed />
       <CardEmpty>
         {notes.length > 0 ? (
-          <Cards onViewNote={note => handleViewNote(note)} notes={notes} />
+          <Cards 
+            onViewNote={note => handleViewNote(note)} notes={notes} 
+            onEditNote={note => handleEditNote(note)} 
+          />
         ) : (
           <WarningEmptyNotes>
             Não há notas a serem exibidas.
@@ -64,7 +75,10 @@ export default function Main() {
       <SectionNotas />
       <CardEmpty>
         {notes.length > 0 ? (
-          <Cards onViewNote={note => handleViewNote(note)} notes={notes} />
+          <Cards 
+            onViewNote={note => handleViewNote(note)} notes={notes}
+            onEditNote={handleEditNote} 
+          />
         ) : (
             <WarningEmptyNotes>
               Não há notas a serem exibidas.
@@ -82,6 +96,13 @@ export default function Main() {
         visible={isViewNoteModalVisible}
         onClose={() => setIsViewNoteModalVisible(false)}
         noteBeginViewed={noteBeingViewed}
+      />
+      <EditNoteModal
+        visible={isEditNoteModalVisible}
+        onClose={() => setIsEditNoteModalVisible(false)}
+        note={noteBeingEdited}
+        onEdit={(editedNote) => {handleEditNote(editedNote)}}
+        /* TODO: implementar lógica de acordo com o botão de editar*/
       />
     </Container>
   );
