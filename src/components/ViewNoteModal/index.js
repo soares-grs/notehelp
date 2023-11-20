@@ -1,8 +1,9 @@
 import CustomModal from "../CustomModal";
-import { Title, Description } from "./styles";
+import { Title, Description, Button, Text, ContainerButton} from "./styles";
 
 
-export default function ViewNoteModal({ visible, onClose, noteBeginViewed }) {
+
+export default function ViewNoteModal({ visible, onClose, noteBeginViewed, handleRemoveNotes}) {
     return (
         <CustomModal 
             visible={visible}
@@ -11,6 +12,9 @@ export default function ViewNoteModal({ visible, onClose, noteBeginViewed }) {
         >
             <Title>{noteBeginViewed?.title}</Title>
             <Description>{noteBeginViewed?.description}</Description>
+            <Button onPress={handleRemoveNotes}>
+                <Text>Excluir</Text>
+            </Button>
         </CustomModal> 
     );
 }

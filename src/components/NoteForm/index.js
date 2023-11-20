@@ -3,14 +3,24 @@ import Icon from "react-native-vector-icons/FontAwesome";
 
 import { useState } from "react";
 
+let lastId = 0;
+
+
+function NewId() {
+
+    lastId += 1;
+
+
+    return lastId;
+}
+
+
 export default function NoteForm({ onClose, onSave, note }) {
 
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
 
-    function gerarIdAleatorio() {
-        return Math.floor(Math.random() * 10000);
-    }
+
 
     return (
         <Form>
@@ -29,7 +39,7 @@ export default function NoteForm({ onClose, onSave, note }) {
             />
 
             <Button
-                onPress={() => onSave({ title, description, date: new Date(), id: gerarIdAleatorio() })}
+                onPress={() => onSave({ title, description, date: new Date(), id: NewId()})}
                 disabled={title.length === 0 || description.length === 0}
             >
                 {/* icone */}

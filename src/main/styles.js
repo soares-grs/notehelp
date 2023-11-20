@@ -22,6 +22,13 @@ export const Card = styled.TouchableOpacity`
   font-size: 16px;
   font-family: 'Montserrat-500';
 `;
+export const Empty = styled.View`
+
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  font-family: 'Montserrat-500';
+`;
 
 export const CardNotes = styled.View`
   display:flex;
