@@ -40,3 +40,9 @@ export const Time = styled.Text`
   color:#a5a5a5;
   font-family: 'Montserrat-500';
 `;
+
+export const IconContainer = styled.View`
+  font-size: 34px;
+  padding: 25px 0px 0px 335px;
+  position: absolute;
+`;

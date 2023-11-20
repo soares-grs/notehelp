@@ -1,8 +1,9 @@
-import { Circle, Card, Title, Time, Container} from "./styles";
+import { Circle, Card, Title, Time, Container, IconContainer} from "./styles";
+import Icon from "react-native-vector-icons/FontAwesome";
 
 import { FlatList } from "react-native";
 
-export default function Cards({ notes, onViewNote }) {
+export default function Cards({ notes, onViewNote, onEditNote }) {
   return (
     <FlatList
       data={notes}
@@ -14,6 +15,9 @@ export default function Cards({ notes, onViewNote }) {
             <Title>{note?.title}</Title>
             <Time>{note?.date?.toString() ?? new Date().toString()}</Time>
           </Card>
+            <IconContainer>
+              <Icon name="plus" size={15} color="#252525" />
+            </IconContainer>
           </Container>
       )}
     />
