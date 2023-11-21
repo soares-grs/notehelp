@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Overlay = styled.KeyboardAvoidingView`
+export const Overlay = styled.TouchableOpacity`
   background-color: rgba(0, 0, 0, 0.6);
   flex: 1;
   align-items: center;

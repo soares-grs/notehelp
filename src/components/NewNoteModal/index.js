@@ -1,7 +1,7 @@
 import CustomModal from "../CustomModal";
 import NoteForm from "../NoteForm";
 
-import { Title } from "./style";
+import { Title} from "./style";
 
 export default function NewNoteModal({ visible, onSave, onClose }) {
     return (
@@ -15,6 +15,7 @@ export default function NewNoteModal({ visible, onSave, onClose }) {
                 onClose={onClose}
                 onSave={onSave}
             />
+  
         </CustomModal>
     );
 }

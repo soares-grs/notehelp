@@ -8,6 +8,43 @@ export const Container = styled.SafeAreaView`
   flex: 1;
 `;
 
+export const WarningEmptyNotes = styled.Text`
+  display:flex;
+  padding: 10px 140px 10px 0px;
+  color: gray;
+  font-family: "Montserrat-500";
+`;
+
+export const Card = styled.TouchableOpacity`
+  background: #d9d9d9;
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  font-family: 'Montserrat-500';
+`;
+export const Empty = styled.View`
+
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  font-family: 'Montserrat-500';
+`;
+
+export const CardNotes = styled.View`
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  width:100%;
+
+`;
+export const CardEmpty = styled.View`
+  display:flex;
+  justify-content:center;
+  margin:0 auto;
+  align-items:center;
+  width:96%;
+`;
+
 
 export const NotesContainer = styled.View`
   flex: 1;
