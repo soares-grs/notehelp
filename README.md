@@ -7,4 +7,4 @@
 - [ ] Edição de notas
 - [x] Uso de ícones
 - [ ] Fixar notas
-- [ ] Deletar notas
+- [x] Deletar notas
