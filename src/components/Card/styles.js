@@ -35,6 +35,12 @@ export const Title = styled.Text`
   font-family: 'Montserrat-500';
 `;
 
+export const Text = styled.Text`
+  font-size: 25px;
+  overflow: hidden;
+  font-family: 'Montserrat-500';
+`;
+
 export const Time = styled.Text`
   font-size: 13px;
   color:#a5a5a5;

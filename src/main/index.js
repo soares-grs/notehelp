@@ -1,4 +1,4 @@
-import { Container, CardNotes, Card, CardEmpty, WarningEmptyNotes } from "./styles";
+import { Container, CardNotes, Card, CardEmpty, WarningEmptyNotes,  Empty } from "./styles";
 import { useState, useEffect } from "react";
 import CustomHeader from "../components/Header";
 import Cards from "../components/Card";
@@ -6,8 +6,9 @@ import AddNoteButton from "../components/AddNoteButton";
 import NewNoteModal from "../components/NewNoteModal";
 import SectionNotas from "../components/SectionNotas";
 import SectionFixed from "../components/SectionFixed";
-import { Text } from "react-native";
+import { Alert, Text } from "react-native";
 import ViewNoteModal from "../components/ViewNoteModal";
+import { Time } from "../components/Card/styles";
 
 
 export default function Main() {
@@ -20,6 +21,16 @@ export default function Main() {
   async function handleViewNote(note) {
     setNoteBeingViewed(note);
     setIsViewNoteModalVisible(true);
+  }
+
+
+  function handleRemoveNotes() {
+    const indexToRemove = notes.findIndex(Cards);
+    if (indexToRemove !== -1) {
+      alert('Tarefa Excluida!')
+      notes.splice(indexToRemove, 1);
+      console.log(notes);
+    } 
   }
 
   function handleCreateNote(note) {
@@ -53,7 +64,11 @@ export default function Main() {
       <SectionFixed />
       <CardEmpty>
         {notes.length > 0 ? (
-          <Cards onViewNote={note => handleViewNote(note)} notes={notes} />
+          <Empty>
+          <WarningEmptyNotes>
+            Não há notas a serem exibidas.
+          </WarningEmptyNotes>
+          </Empty>
         ) : (
           <WarningEmptyNotes>
             Não há notas a serem exibidas.
@@ -82,6 +97,7 @@ export default function Main() {
         visible={isViewNoteModalVisible}
         onClose={() => setIsViewNoteModalVisible(false)}
         noteBeginViewed={noteBeingViewed}
+        handleRemoveNotes={handleRemoveNotes}
       />
     </Container>
   );
